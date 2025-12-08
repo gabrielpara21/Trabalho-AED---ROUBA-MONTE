@@ -8,7 +8,10 @@ namespace rouba_monte
 {
     internal class Partida
     {
-        // iniciarPartida();
+        private int numPartida;
+        private int quantidadeJogadores
+
+        // iniciarPartida(int quantidadeJogadores);
         // comprarCarta();
         //roubarMonte();
         //roubarDoDescarte();
