@@ -29,7 +29,7 @@ namespace rouba_monte
                 numeroPartida++;
                 partida = new Partida(quantidadeJogadores, numeroPartida());
 
-            } while (partida.ContinuarJogando())
+            } while (partida.ContinuarJogando());
         }
     }
 }

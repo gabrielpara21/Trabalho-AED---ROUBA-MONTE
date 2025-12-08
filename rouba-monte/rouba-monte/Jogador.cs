@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -66,7 +67,10 @@ namespace rouba_monte
                  */
                 Console.WriteLine($" -{pos}° lugar");
             }
+            StreamWriter arq = new StreamWriter("LogDasAções.txt", true, Encoding.UTF8);
+            arq.WriteLine($"Histórico de {nome} solicitado"); // log da ação
+            arq.Close();
         }
-
     }
 }
+

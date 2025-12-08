@@ -9,7 +9,7 @@ namespace rouba_monte
     internal class Partida
     {
         private int numPartida;
-        private int quantidadeJogadores
+        private int quantidadeJogadores;
 
         // iniciarPartida(int quantidadeJogadores);
         // comprarCarta();
