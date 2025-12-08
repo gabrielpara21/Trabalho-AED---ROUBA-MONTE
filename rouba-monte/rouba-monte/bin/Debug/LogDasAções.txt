@@ -1,15 +1,13 @@
-﻿Baralho com 15 criado.
-Baralho com 15 cartas criado.
-o baralho foi embaralhado.
-Baralho com 52 cartas criado.
-o baralho foi embaralhado.
-Baralho com 52 cartas criado.
-o baralho foi embaralhado.
-Baralho com 52 cartas criado.
-o baralho foi embaralhado.
-Baralho com 52 cartas criado.
-o baralho foi embaralhado.
-Baralho com 1800 cartas criado.
-o baralho foi embaralhado.
-Baralho com 1800 cartas criado.
-o baralho foi embaralhado.
+﻿Carta 2 - paus adicionada à área de descarte
+Carta 8 - ouros adicionada à área de descarte
+Carta 6 - copas adicionada à área de descarte
+Carta 13 - espadas adicionada à área de descarte
+Carta 11 - ouros adicionada à área de descarte
+Carta 7 - paus adicionada à área de descarte
+
+Área de descarte: 
+2 - paus 8 - ouros 6 - copas 13 - espadas 11 - ouros 
+7 - paus 
+6 - copas removida da área de descarte 
+Área de descarte: 
+2 - paus 8 - ouros 13 - espadas 11 - ouros 7 - paus 

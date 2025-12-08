@@ -15,14 +15,16 @@ namespace rouba_monte
         //mostrarHIstoricoJogador();
         static void Main(string[] args)
         {
-             Baralho baralho = new Baralho();
-            baralho.CriarCartas(1800);
-            baralho.Embaralhar();
-            baralho.Cartas.ForEach(c =>
-            {
-                Console.WriteLine(c.Naipe + c.Num);
-            });
-            Console.WriteLine(baralho.Cartas.Count);
+            AreaDescarte areaDescarte = new AreaDescarte();
+            areaDescarte.AdicionarCarta(new Carta(2, "paus"));
+            areaDescarte.AdicionarCarta(new Carta(8, "ouros"));
+            areaDescarte.AdicionarCarta(new Carta(6, "copas"));
+            areaDescarte.AdicionarCarta(new Carta(13, "espadas"));
+            areaDescarte.AdicionarCarta(new Carta(11, "ouros"));
+            areaDescarte.AdicionarCarta(new Carta(7, "paus"));
+            areaDescarte.MostrarAreaDescarte();
+            areaDescarte.EncontrarRemoverCarta(new Carta(6, "copas"));
+            areaDescarte.MostrarAreaDescarte();
         }
     }
 }

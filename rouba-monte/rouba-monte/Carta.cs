@@ -28,5 +28,10 @@ namespace rouba_monte
             this.naipe = naipe;
         }
 
+        public override string ToString()
+        {
+            return $"{num} - {naipe}";
+        }
+
     }
 }

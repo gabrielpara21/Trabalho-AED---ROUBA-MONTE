@@ -65,8 +65,7 @@ namespace rouba_monte
                 vetTemp[i] = cartas[rnd.Next(0, cartas.Count)]; //copia as cartas de posições aleatórias da lista de cartas para o vetor
                 
             }
-            cartas = null; //torna a lista inacessível
-            cartas = new List<Carta>();
+            cartas.Clear(); //limpa a lista
             foreach (Carta carta in vetTemp) {
                 cartas.Add(carta); //aqui adiciona cada carta do vetor à nova lista embaralhada
             }
