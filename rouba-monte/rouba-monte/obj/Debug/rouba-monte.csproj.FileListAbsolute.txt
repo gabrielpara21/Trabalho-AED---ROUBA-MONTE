@@ -1,0 +1,8 @@
+C:\Users\Kaua_Felipe\source\repos\Trabalho-AED---ROUBA-MONTE\rouba-monte\rouba-monte\bin\Debug\rouba-monte.exe.config
+C:\Users\Kaua_Felipe\source\repos\Trabalho-AED---ROUBA-MONTE\rouba-monte\rouba-monte\bin\Debug\rouba-monte.exe
+C:\Users\Kaua_Felipe\source\repos\Trabalho-AED---ROUBA-MONTE\rouba-monte\rouba-monte\bin\Debug\rouba-monte.pdb
+C:\Users\Kaua_Felipe\source\repos\Trabalho-AED---ROUBA-MONTE\rouba-monte\rouba-monte\obj\Debug\rouba-monte.csproj.AssemblyReference.cache
+C:\Users\Kaua_Felipe\source\repos\Trabalho-AED---ROUBA-MONTE\rouba-monte\rouba-monte\obj\Debug\rouba-monte.csproj.CoreCompileInputs.cache
+C:\Users\Kaua_Felipe\source\repos\Trabalho-AED---ROUBA-MONTE\rouba-monte\rouba-monte\obj\Debug\rouba-monte.exe
+C:\Users\Kaua_Felipe\source\repos\Trabalho-AED---ROUBA-MONTE\rouba-monte\rouba-monte\obj\Debug\rouba-monte.pdb
+C:\Users\Kaua_Felipe\source\repos\Trabalho-AED---ROUBA-MONTE\rouba-monte\rouba-monte\obj\Debug\rouba-monte.exe.config
