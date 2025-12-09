@@ -57,7 +57,6 @@ namespace rouba_monte
         }
         public void Limpar()
         {
-            //não sei se realmente será usado
             cartas.Clear();
             topo = null;
         }

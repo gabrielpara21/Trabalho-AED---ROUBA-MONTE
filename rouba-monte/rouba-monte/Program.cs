@@ -66,7 +66,6 @@ namespace rouba_monte
 
                 Console.WriteLine("\n" + textoRanking);
 
-                // --- log ranking partida ---
                 StreamWriter arq = new StreamWriter("LogDasAções.txt", true, Encoding.UTF8);
 
                 arq.WriteLine($"\n--- Fim da Partida {numeroPartida} ---");
@@ -74,7 +73,6 @@ namespace rouba_monte
                 arq.Close();
 
 
-                // pergunta se continua
                 do
                 {
                     Console.Write("\nDeseja iniciar nova partida com os mesmos jogadores? (S/N): ");
@@ -100,7 +98,6 @@ namespace rouba_monte
                 }
             }
 
-            // consulta de histórico
             Console.WriteLine("\n--- Consulta de histórico ---");
             do
             {

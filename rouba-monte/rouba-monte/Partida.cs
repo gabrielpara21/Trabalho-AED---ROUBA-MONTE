@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace rouba_monte
 {
@@ -21,28 +22,56 @@ namespace rouba_monte
 
 
         public string IniciarPartida()
-        {
+        {   
+
             while (baralho.Cartas.Count > 0)
             {
+                StreamWriter arq = new StreamWriter("LogDasAções.txt", true, Encoding.UTF8);
                 Jogador jogadorDaVez = filaCircular.GetAtual();
+                arq.WriteLine($"Vez de {jogadorDaVez.Nome}");
+
                 Carta carta = ComprarCarta();
+                arq.WriteLine($"{jogadorDaVez.Nome} comprou a carta {carta}");
+                arq.Close();
+
 
                 bool jogou = false;
 
-                if (RoubarMonte(jogadorDaVez, carta))
+                Jogador jogadorRoubado;
+                Carta cartaDoDescarte;
+                if (RoubarMonte(jogadorDaVez, carta, out jogadorRoubado))
+                {
                     jogou = true;
-                else if (RoubarDoDescarte(jogadorDaVez, carta))
+                    arq = new StreamWriter("LogDasAções.txt", true, Encoding.UTF8);
+                    arq.WriteLine($"{jogadorDaVez.Nome} roubou o monte de {jogadorRoubado.Nome}");
+                    arq.Close();
+                    filaCircular.ImprimirMonteTodosJogadores();
+                }
+                else if (RoubarDoDescarte(jogadorDaVez, carta, out cartaDoDescarte))
+                {
                     jogou = true;
+                    arq = new StreamWriter("LogDasAções.txt", true, Encoding.UTF8);
+                    arq.WriteLine($"{jogadorDaVez.Nome} roubou a carta {cartaDoDescarte} da área de descarte");
+                    arq.Close();
+                    filaCircular.ImprimirMonteTodosJogadores();
+                }
                 else if (EmpilharNoProprioMonte(jogadorDaVez, carta))
+                {
+                    arq = new StreamWriter("LogDasAções.txt", true, Encoding.UTF8);
                     jogou = true;
+                    arq.WriteLine($"{jogadorDaVez.Nome} empilhou a carta {carta} no próprio monte");
+                    arq.Close();
+                    filaCircular.ImprimirMonteTodosJogadores();
+                }
 
                 if (!jogou)
+                {
                     areaDescarte.AdicionarCarta(carta);
-
-                filaCircular.Proximo();
+                    filaCircular.Proximo();
+                }
             }
 
-            int n = filaCircular.Tamanho();
+                int n = filaCircular.Tamanho();
             Jogador[] vetorJogadores = new Jogador[n];
 
             for (int i = 0; i < n; i++)
@@ -106,9 +135,9 @@ namespace rouba_monte
             baralho.Cartas.RemoveAt(0);
             return carta;
         }
-        public bool RoubarMonte(Jogador jogador, Carta carta)
+        public bool RoubarMonte(Jogador jogador, Carta carta, out Jogador alvo)
         {
-            Jogador alvo = null;
+            alvo = null;
 
             for (int i = 0; i < filaCircular.Tamanho(); i++)
             {
@@ -143,9 +172,9 @@ namespace rouba_monte
             return true;
         }
 
-        public bool RoubarDoDescarte(Jogador jogador, Carta carta)
+        public bool RoubarDoDescarte(Jogador jogador, Carta carta, out Carta cartaDoDescarte)
         {
-            Carta cartaDoDescarte = areaDescarte.EncontrarRemoverCarta(carta);
+            cartaDoDescarte = areaDescarte.EncontrarRemoverCarta(carta);
 
             if (cartaDoDescarte == null)
                 return false;

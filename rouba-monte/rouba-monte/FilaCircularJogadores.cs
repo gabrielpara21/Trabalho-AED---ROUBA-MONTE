@@ -43,7 +43,7 @@ namespace rouba_monte
                 Jogadores[i] = new Jogador(nome);
             }
             StreamWriter arq = new StreamWriter("LogDasAções.txt", true, Encoding.UTF8);
-            arq.Write($"Jogadores da partida: "); // log da ação
+            arq.Write($"Jogadores da partida: ");
             for (int i = 0; i < tam; i++)
             {
                 arq.Write($"{jogadores[i].Nome} ");
@@ -53,19 +53,23 @@ namespace rouba_monte
         }
         public Jogador Proximo()
         {
-            //sempre que chegar no ultimo volta para o primeiro
-            //na primeira chamada vai retornar o primeiro jogador
             indiceAtual = (indiceAtual + 1) % jogadores.Length;
             Jogador jogadorAtual = jogadores[indiceAtual];
-            //StreamWriter arq = new StreamWriter("LogDasAções.txt", true, Encoding.UTF8);
-            //arq.WriteLine($"Vez de {jogadores[indiceAtual].Nome}"); // log da ação
-           // arq.Close();
             
             return jogadorAtual;
         }
 
+        public void ImprimirMonteTodosJogadores()
+        {
+            StreamWriter arq = new StreamWriter("LogDasAções.txt", true, Encoding.UTF8);
+            foreach (Jogador jogador in jogadores)
+            {
+                arq.Write($"|Topo do monte de {jogador.Nome}: {jogador.GetMonte().Topo}| ") ;
+            }
+            arq.Close();
+        }
 
-        //proximoJogador();
-        //getAtual();
+
+ 
     }
 }

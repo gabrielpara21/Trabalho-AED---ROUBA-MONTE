@@ -26,7 +26,7 @@ namespace rouba_monte
         {
             cartas.Add(carta);
             StreamWriter arq = new StreamWriter("LogDasAções.txt", true, Encoding.UTF8);
-            arq.WriteLine($"Carta {carta} adicionada à área de descarte"); // log da ação
+            arq.WriteLine($"\nCarta {carta} adicionada à área de descarte"); 
             arq.Close();
 
         }
@@ -43,11 +43,11 @@ namespace rouba_monte
                 }
                 else
                 {
-                    for (int i = 0; i < cartas.Count; i++) // imprime de 5 em 5
+                    for (int i = 0; i < cartas.Count; i++) 
                     {
                         arq.Write($"{cartas[i]} ");
 
-                        if ((i + 1) % 5 == 0) //verifica se a o próximo elemento é múltiplo de 5, se sim, quebra a linha
+                        if ((i + 1) % 5 == 0) 
                         {
                             arq.WriteLine();
                         }
@@ -61,8 +61,7 @@ namespace rouba_monte
                 arq.Close();
         }
 
-        public Carta EncontrarRemoverCarta(Carta carta) // esse método encontra e já remove a carta da área de descarte, retorna a carta removida
-                                                        //o parâmetro é a carta do topo do monte do jogador que utilizar o método
+        public Carta EncontrarRemoverCarta(Carta carta) 
         {
             if (cartas == null)
                 throw new Exception("area de descarte == null");
@@ -77,7 +76,7 @@ namespace rouba_monte
                         Carta temp = c;
                         cartas.Remove(c);
                         StreamWriter arq = new StreamWriter("LogDasAções.txt", true, Encoding.UTF8);
-                        arq.Write($"\n{c} removida da área de descarte ");
+                        arq.WriteLine($"\n{c} removida da área de descarte ");
                         arq.Close();
                         return temp;
                     }
