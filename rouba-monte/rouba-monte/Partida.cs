@@ -150,8 +150,9 @@ namespace rouba_monte
             if (cartaDoDescarte == null)
                 return false;
 
-            jogador.GetMonte().AdicionarCarta(carta);
+            
             jogador.GetMonte().AdicionarCarta(cartaDoDescarte);
+            jogador.GetMonte().AdicionarCarta(carta);
 
             return true;
         }
