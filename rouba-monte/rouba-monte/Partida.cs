@@ -50,7 +50,7 @@ namespace rouba_monte
 
             OrdenarPorQuantidadeCartas(vetorJogadores);
 
-            string textoRanking = "Ranking da partida:\n";
+            string textoRanking = vetorJogadores[0].Nome + " Foi o ganhador" +"\nRanking da partida:\n";
 
             for (int i = 0; i < n; i++)
             {
@@ -61,7 +61,11 @@ namespace rouba_monte
             }
 
             for (int i = 0; i < n; i++)
+            {
+                vetorJogadores[i].AtualizarRanking(i + 1);
                 vetorJogadores[i].GetMonte().Limpar();
+            }
+                
 
             return textoRanking;
         }
