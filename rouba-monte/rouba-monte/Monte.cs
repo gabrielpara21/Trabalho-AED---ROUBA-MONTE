@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -46,6 +47,10 @@ namespace rouba_monte
             topo = null;
             return null;
         }
+        public Carta Remover()
+        {
+            return cartas.Pop();
+        }
         public int GetQuantidade()
         {
             return cartas.Count;
@@ -59,5 +64,4 @@ namespace rouba_monte
     }
 }
 
-    
 

@@ -20,6 +20,7 @@ namespace rouba_monte
             get { return cartas; }
             set { cartas = value; }
         }
+       
 
         public void CriarCartas(int quantidadeCartasEscolhidas)
         {

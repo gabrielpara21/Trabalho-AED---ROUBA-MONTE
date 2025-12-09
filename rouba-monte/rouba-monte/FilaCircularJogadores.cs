@@ -9,7 +9,7 @@ namespace rouba_monte
 {
     internal class FilaCircularJogadores
     {
-
+        
         private int indiceAtual;
 
         public int IndiceAtual
@@ -24,10 +24,18 @@ namespace rouba_monte
             get { return jogadores; }
             set { jogadores = value; }
         }
+        public Jogador GetAtual()
+        {
+            return jogadores[indiceAtual];
+        }
+        public int Tamanho()
+        {
+            return jogadores.Length;
+        }
         public FilaCircularJogadores(int tam)
         {
-            Jogadores = new Jogador[tam];
-            indiceAtual = 0;
+            this.Jogadores = new Jogador[tam];
+            this.indiceAtual = 0;
             for (int i = 0; i < tam; i++)
             {
                 Console.Write("Digite o nome do jogador " + (i + 1) + ": ");
