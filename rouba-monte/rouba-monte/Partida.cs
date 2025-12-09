@@ -46,7 +46,12 @@ namespace rouba_monte
             Jogador[] vetorJogadores = new Jogador[n];
 
             for (int i = 0; i < n; i++)
+            {
                 vetorJogadores[i] = filaCircular.GetAtual();
+                filaCircular.Proximo();
+            }
+                
+
 
             OrdenarPorQuantidadeCartas(vetorJogadores);
 

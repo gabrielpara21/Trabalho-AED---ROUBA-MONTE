@@ -59,7 +59,7 @@ namespace rouba_monte
 
                 Baralho baralho = new Baralho();
                 baralho.CriarCartas(qtdCartas);
-                baralho.Embaralhar();
+                baralho.Embaralhar(); 
 
                 Partida partida = new Partida(baralho, fila);
                 string textoRanking = partida.IniciarPartida();

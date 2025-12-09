@@ -55,11 +55,12 @@ namespace rouba_monte
         {
             //sempre que chegar no ultimo volta para o primeiro
             //na primeira chamada vai retornar o primeiro jogador
-            Jogador jogadorAtual = jogadores[indiceAtual];
-            StreamWriter arq = new StreamWriter("LogDasAções.txt", true, Encoding.UTF8);
-            arq.WriteLine($"Vez de {jogadores[indiceAtual].Nome}"); // log da ação
-            arq.Close();
             indiceAtual = (indiceAtual + 1) % jogadores.Length;
+            Jogador jogadorAtual = jogadores[indiceAtual];
+            //StreamWriter arq = new StreamWriter("LogDasAções.txt", true, Encoding.UTF8);
+            //arq.WriteLine($"Vez de {jogadores[indiceAtual].Nome}"); // log da ação
+           // arq.Close();
+            
             return jogadorAtual;
         }
 
