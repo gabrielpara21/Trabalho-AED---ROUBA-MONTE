@@ -1,28 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace rouba_monte
 {
     internal class Jogador
     {
-        private int posicao;
         private string nome;
-        private int quantCartasMonte;
+        private int posicao;
         private Queue<int> ranking;
-        public Queue<int> Ranking
-        {
-            get { return ranking; }
-            set { ranking = value; }
-        }
-
-        public int QuantCartasMonte
-        {
-            get { return quantCartasMonte; }
-            set { quantCartasMonte = value; }
-        }
+        private Monte monte;
 
         public string Nome
         {
@@ -36,37 +22,46 @@ namespace rouba_monte
             set { posicao = value; }
         }
 
+        public Queue<int> Ranking
+        {
+            get { return ranking; }
+            set { ranking = value; }
+        }
+
         public Jogador(string nome)
         {
             this.nome = nome;
             this.posicao = 0;
-            this.quantCartasMonte = 0;
             this.ranking = new Queue<int>(5);
+            this.monte = new Monte();
+        }
+
+        public Monte GetMonte()
+        {
+            return monte;
+        }
+
+        public void ReiniciarMonte()
+        {
+            monte = new Monte();
         }
 
         public void AtualizarRanking(int posicao)
         {
             if (ranking.Count < 5)
-            {
                 ranking.Enqueue(posicao);
-            }
             else
             {
                 ranking.Dequeue();
                 ranking.Enqueue(posicao);
             }
         }
+
         public void MostrarHistorico()
         {
-            Console.WriteLine($"Histórico de posições do jogador {nome} nas últimas partidas:");
+            Console.WriteLine($"Histórico de posições do jogador {nome}:");
             foreach (int pos in ranking)
-            {
-                /*
-                 IMPRIME EM ORDEM DE INSERÇÃO, OU SEJA DA PARTIDA MAIS ANTIGA PARA A MAIS RECENTE
-                 */
-                Console.WriteLine($" -{pos}° lugar");
-            }
+                Console.WriteLine($" - {pos}º lugar");
         }
-
     }
 }
